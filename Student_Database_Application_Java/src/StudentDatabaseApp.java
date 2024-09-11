@@ -1,13 +1,23 @@
+import java.util.*;
+
 public class StudentDatabaseApp {
-    public static void main(String[] args)  {
+    public static void main(String[] args)  {    
 
-        // Ask the user how many new students will be added to the database
-        Student Student1 = new Student();
-        Student1.email();
-        System.out.println(Student1.showStatus());
-       
+        System.out.println("Enter the number of new Students to enroll: ");
+        Scanner sc = new Scanner(System.in);
+        int numOfStudent = sc.nextInt();
 
-        // Cretea a loop for asking student
+        Student[] Stu = new Student[numOfStudent];
+
+        for(int i=0; i<numOfStudent; i++){
+            Stu[i] = new Student();
+            Stu[i].email();
+            Stu[i].payTuition();
+        }
+
+        for(int i=0; i<numOfStudent; i++){
+            System.out.println(Stu[i].showStatus());
+        }
         
     }
 }
